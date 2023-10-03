@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-app-bg-100 text-app-text-100;
+}
+
+.linear-grad-100 {
+  background: linear-gradient(97deg, #fd8686 0.62%, #ffd178 98.02%), #64fcd9;
+}
+
+.fill-grad-100 {
+  fill: linear-gradient(97deg, #ff8686 0.62%, #ffc38b 98.02%);
+}
+
+.hover-linear-grad-100:hover {
+  background: linear-gradient(97deg, #fd8686 0.62%, #ffd178 98.02%), #64fcd9;
+}
+
+.ellipsis-2-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar {
+  width: 5px;
+  /*  background: #f1f5fa;*/
+  @apply bg-app-grey-100;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  @apply bg-app-theme-black-100 rounded-full;
+}
+
+.base-btn {
+  &:hover {
+    @apply bg-opacity-[.8];
+  }
+
+  &:active {
+    @apply scale-[.95];
+  }
+
+  &.flex-btn {
+    @apply flex items-center;
+  }
+
+  &.flex-center-btn {
+    @apply flex items-center justify-center;
+  }
+}
+
+.btn {
+  @apply flex items-center gap-2 bg-app-theme-black-100 text-white text-sm px-5 py-3 rounded-lg font-semibold transition;
+
+  &:hover {
+    @apply bg-opacity-[.8];
+  }
+
+  &:active {
+    @apply scale-[.95];
+  }
+
+  &:disabled {
+    @apply text-app-text-disabled-100;
+  }
+}
+
+.display-linebreak {
+  white-space: pre-line;
+}
