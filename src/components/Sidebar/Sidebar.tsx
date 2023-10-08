@@ -8,12 +8,22 @@ import { useState } from "react";
 import { logOut } from "@/services/users";
 import ChatBlock from "@/components/Sidebar/ChatBlock";
 import ChatStarter from "@/components/Home/ChatStarter";
+import { cva } from "class-variance-authority";
+
+const SideBarVariants = cva("", {
+	variants: {
+		mainPage: {
+			yes: "w-full lg:w-auto",
+			no: "hidden lg:block",
+		},
+	},
+});
 
 interface SidebarProps {
-	withFloating: boolean;
+	mainPage: boolean;
 }
 
-export default function Sidebar({ withFloating }: SidebarProps) {
+export default function Sidebar({ mainPage }: SidebarProps) {
 	const currentUser = useUserValue();
 	const optionControl = useOpenClose();
 	const { show, setOpen, setClose } = useOpenClose();
@@ -40,8 +50,8 @@ export default function Sidebar({ withFloating }: SidebarProps) {
 	};
 
 	return (
-		<div>
-			<div className="relative w-[300px] px-6 py-5 min-h-screen max-h-screen overflow-y-auto border-r-[1px] border-solid border-[#C9DAEE] custom-scrollbar">
+		<div className={SideBarVariants({ mainPage: mainPage ? "yes" : "no" })}>
+			<div className="relative w-full lg:w-[300px] px-6 py-5 min-h-screen max-h-screen overflow-y-auto border-r-[1px] border-solid border-[#C9DAEE] custom-scrollbar">
 				<div>
 					<Image src={logo} alt="logo" />
 				</div>

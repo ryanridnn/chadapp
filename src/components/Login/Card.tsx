@@ -4,7 +4,7 @@ import { signIn } from "@/services/users";
 
 export default function LoginCard() {
 	return (
-		<div className="flex items-center justify-center flex-col bg-app-grey-100 pt-8 pb-16 rounded-3xl px-4">
+		<div className="flex items-center justify-center flex-col bg-app-grey-100 pt-8 pb-16 rounded-3xl px-4 max-w-[90%]">
 			<Image
 				priority
 				src={loginIllustration}

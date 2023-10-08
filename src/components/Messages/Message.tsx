@@ -13,7 +13,7 @@ interface MessageCardProps {
 	message: Message;
 }
 
-const ContainerVariants = cva("flex gap-3", {
+const ContainerVariants = cva("flex gap-3 w-[360px] max-w-[calc(100vw-48px)]", {
 	variants: {
 		user: {
 			me: "self-end flex-row-reverse",
@@ -25,7 +25,7 @@ const ContainerVariants = cva("flex gap-3", {
 	},
 });
 
-const CardVariants = cva("group relative p-3 rounded-lg w-[360px] max-w-full", {
+const CardVariants = cva("group relative flex-1 p-3 rounded-lg", {
 	variants: {
 		user: {
 			me: "bg-app-theme-black-100 text-white self-end",
